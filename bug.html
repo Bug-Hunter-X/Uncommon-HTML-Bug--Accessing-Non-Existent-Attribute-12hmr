@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Uncommon HTML Bug</title>
+</head>
+<body>
+  <div id="myDiv">
+    This is some text.
+  </div>
+  <script>
+    // This script attempts to access a non-existent attribute of an element
+    // This might cause an error in some browsers but not in others.
+    // This can happen due to a typo or unintended change of code
+    console.log(document.getElementById('myDiv').getAttribute('nonExistentAttribute'));
+  </script>
+</body>
+</html>
