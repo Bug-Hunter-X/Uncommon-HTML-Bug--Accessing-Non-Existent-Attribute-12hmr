@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Uncommon HTML Bug Solution</title>
+</head>
+<body>
+  <div id="myDiv" data-attribute="existing">
+    This is some text.
+  </div>
+  <script>
+    // Check if the attribute exists before accessing it. This approach is safer and prevents errors
+    const myDiv = document.getElementById('myDiv');
+    const attributeValue = myDiv.hasAttribute('data-attribute') ? myDiv.getAttribute('data-attribute') : 'Attribute not found';
+    console.log(attributeValue); //This will log 'existing'
+    const nonExistent = myDiv.hasAttribute('nonExistentAttribute') ? myDiv.getAttribute('nonExistentAttribute') : 'Attribute not found';
+    console.log(nonExistent); //This will log 'Attribute not found'
+  </script>
+</body>
+</html>
